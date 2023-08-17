@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { NgIf, NgFor, CurrencyPipe } from '@angular/common';
 import { Product } from '../product';
-import { Review } from 'src/app/reviews/review';
 
 @Component({
     selector: 'pm-product-detail',
@@ -12,16 +11,14 @@ import { Review } from 'src/app/reviews/review';
 })
 export class ProductDetailComponent {
   // Just enough here for the template to compile
+  @Input() productId: number = 0;
   errorMessage = '';
 
   // Product to display
   product: Product | null = null;
 
   // Set the page title
-  pageTitle = this.product ? `Product Detail for: ${this.product.productName}` : null;
-
-  // Reviews for this product
-  productReviews: Review[] = [];
+  pageTitle = this.product ? `Product Detail for: ${this.product.productName}` : 'Product Detail';
 
   addToCart(product: Product) {
   }

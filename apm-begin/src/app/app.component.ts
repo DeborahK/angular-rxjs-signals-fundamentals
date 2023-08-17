@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs';
 import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({

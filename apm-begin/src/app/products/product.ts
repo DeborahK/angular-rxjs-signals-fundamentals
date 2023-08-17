@@ -1,3 +1,5 @@
+import { Review } from "../reviews/review";
+
 /* Defines the product entity */
 export interface Product {
   id: number;
@@ -6,4 +8,6 @@ export interface Product {
   description: string;
   price: number;
   quantityInStock?: number;
+  hasReviews?: boolean;
+  reviews?: Review[];
 }

@@ -31,7 +31,7 @@
 
     <div class="table-responsive">
       <table class="table mb-0"
-             *ngIf="productReviews.length">
+             *ngIf="product.reviews; else noReviews">
         <thead>
           <tr>
             <th>Review</th>
@@ -40,19 +40,27 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let review of productReviews">
+          <tr *ngFor="let review of product.reviews">
             <td>{{ review.title }} </td>
             <td>{{ review.userName }}</td>
             <td>{{ review.text }}</td>
           </tr>
         </tbody>
       </table>
+
+      <ng-template #noReviews> No reviews for this product</ng-template>
+
     </div>
 
   </div>
 </div>
 
-<div class="alert alert-danger"
+<div class="card"
      *ngIf="errorMessage">
-  {{errorMessage}}
+  <div class="card-header">
+    Product Detail
+  </div>
+  <div class="alert alert-danger">
+    {{errorMessage}}
+  </div>
 </div>

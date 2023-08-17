@@ -9,7 +9,8 @@ export class ProductData {
       productCode: 'GDN-0011',
       description: 'Leaf rake with 48-inch wooden handle',
       price: 19.95,
-      quantityInStock: 15
+      quantityInStock: 15,
+      hasReviews: true
     },
     {
       id: 2,
@@ -17,7 +18,8 @@ export class ProductData {
       productCode: 'GDN-0023',
       description: '15 gallon capacity rolling garden cart',
       price: 32.99,
-      quantityInStock: 2
+      quantityInStock: 2,
+      hasReviews: true
     },
     {
       id: 5,
@@ -25,7 +27,8 @@ export class ProductData {
       productCode: 'TBX-0048',
       description: 'Curved claw steel hammer',
       price: 8.9,
-      quantityInStock: 8
+      quantityInStock: 8,
+      hasReviews: true
     },
     {
       id: 8,
@@ -33,7 +36,8 @@ export class ProductData {
       productCode: 'TBX-0022',
       description: '15-inch steel blade hand saw',
       price: 11.55,
-      quantityInStock: 6
+      quantityInStock: 6,
+      hasReviews: false
     },
     {
       id: 10,
@@ -41,7 +45,8 @@ export class ProductData {
       productCode: 'GMG-0042',
       description: 'Standard two-button video game controller',
       price: 35.95,
-      quantityInStock: 12
+      quantityInStock: 12,
+      hasReviews: true
     }
   ];
 }

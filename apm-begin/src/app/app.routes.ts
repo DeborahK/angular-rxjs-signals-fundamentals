@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found.component';
+import { PageNotFoundComponent } from './utilities/page-not-found.component';
 
 export const routes: Routes = [
   { path: 'welcome', component: HomeComponent },
   {
     path: 'products',
-    loadComponent: () => import('./products/product-shell/product-shell.component').then(c => c.ProductShellComponent)
+    loadComponent: () => import('./products/product-list/product-list.component').then(c => c.ProductListComponent)
   },
   {
     path: 'cart',

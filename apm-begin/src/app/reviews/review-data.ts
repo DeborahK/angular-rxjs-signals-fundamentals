@@ -20,7 +20,7 @@ export class ReviewData {
 
         {
             id: 3,
-            productId: 8,
+            productId: 5,
             userName: 'allthumbs',
             title: "Dangerous!",
             text: "I almost injured myself with this product"
