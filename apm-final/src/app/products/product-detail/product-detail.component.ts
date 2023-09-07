@@ -12,7 +12,6 @@ import { EMPTY, Subscription, catchError } from 'rxjs';
   imports: [NgIf, NgFor, CurrencyPipe]
 })
 export class ProductDetailComponent implements OnChanges, OnDestroy {
-  // Just enough here for the template to compile
   @Input() productId: number = 0;
   errorMessage = '';
   sub!: Subscription;
@@ -41,7 +40,9 @@ export class ProductDetailComponent implements OnChanges, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
 
   addToCart(product: Product) {
