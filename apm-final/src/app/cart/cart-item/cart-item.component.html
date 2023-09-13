@@ -1,0 +1,42 @@
+<div class="card border-primary"
+     *ngIf='cartItem'>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4 fw-bold ">Product</div>
+      <div class="col-md-2 fw-bold text-center">Price</div>
+      <div class="col-md-2 fw-bold text-center">Quantity</div>
+      <div class="col-md-2 fw-bold text-center">Extended Price</div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-4">
+        {{ cartItem.product.productName }}
+      </div>
+      <div class="col-md-2 text-center">
+        {{ cartItem.product.price | currency }}
+      </div>
+      <div class="col-md-2 text-center">
+        <select class="form-select"
+                aria-label="Quantity list"
+                style="margin-bottom: 10px; width:60px; margin: 0 auto"
+                [ngModel]="cartItem.quantity"
+                (change)="onQuantitySelected($any($event.target).value)">
+          <option disabled
+                  value="">--Select a quantity--</option>
+          <option *ngFor="let q of qtyArr">{{ q }}</option>
+        </select>
+      </div>
+      <div class="col-md-2 text-center">
+        {{ exPrice | currency }}
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-warning"
+                (click)="removeFromCart()">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
