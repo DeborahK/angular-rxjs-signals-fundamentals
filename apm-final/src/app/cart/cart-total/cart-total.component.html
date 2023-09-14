@@ -7,11 +7,11 @@
 
   <div class='card-body'>
     <div class="row">
-      <div class="col-md-4">Subtotal:</div>
+      <div class="col-md-5">Subtotal:</div>
       <div class="col-md-4 text-end">{{subTotal | currency}}</div>
     </div>
     <div class="row">
-      <div class="col-md-4">Delivery:</div>
+      <div class="col-md-5">Delivery:</div>
       <div class="col-md-4 text-end"
            *ngIf='deliveryFee'>{{deliveryFee | currency}}</div>
       <div class="col-md-4"
@@ -20,12 +20,12 @@
     </div>
 
     <div class="row">
-      <div class="col-md-4">Estimated Tax:</div>
+      <div class="col-md-5">Estimated Tax:</div>
       <div class="col-md-4 text-end">{{tax | currency}}</div>
     </div>
 
     <div class="row">
-      <div class="col-md-4"><b>Total:</b></div>
+      <div class="col-md-5"><b>Total:</b></div>
       <div class="col-md-4 text-end"><b>{{totalPrice | currency}}</b></div>
     </div>
   </div>
