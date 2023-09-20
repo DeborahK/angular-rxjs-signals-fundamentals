@@ -8,7 +8,7 @@ import { Product } from "../products/product";
 export class CartService {
   cartItems = signal<CartItem[]>([]);
 
-  effLength = effect(() => console.log("Cart Length:", this.cartItems().length));
+  effLength = effect(() => console.log("Cart Array Length:", this.cartItems().length));
 
   cartCount = computed(() => this.cartItems().reduce(
     (accQty, item) => accQty + item.quantity, 0));

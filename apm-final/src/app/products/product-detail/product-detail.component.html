@@ -1,7 +1,7 @@
 <div class="card"
      *ngIf="product$ | async as product">
   <div class="card-header">
-    {{pageTitle}}
+    {{pageTitle$ | async}}
   </div>
 
   <div class="card-body">
