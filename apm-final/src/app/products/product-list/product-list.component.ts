@@ -15,7 +15,7 @@ export class ProductListComponent {
   pageTitle = 'Products';
   errorMessage = '';
 
-  productService = inject(ProductService);
+  private productService = inject(ProductService);
 
   // Selected product id to highlight the entry
   selectedProductId$ = this.productService.productSelected$;

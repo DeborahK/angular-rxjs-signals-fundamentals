@@ -16,10 +16,10 @@ export class ProductService {
   private reviewService = inject(ReviewService);
 
   private productSelectedSubject = new Subject<number>();
-  productSelected$ = this.productSelectedSubject.asObservable();
+  readonly productSelected$ = this.productSelectedSubject.asObservable();
 
   // Get all products
-  products$ = this.http.get<Product[]>(this.productsUrl)
+  readonly products$ = this.http.get<Product[]>(this.productsUrl)
     .pipe(
       tap(p => console.log(JSON.stringify(p))),
       shareReplay(1),
@@ -27,7 +27,7 @@ export class ProductService {
     );
 
   // Get one product
-  product1$ = this.productSelected$
+  readonly product1$ = this.productSelected$
     .pipe(
       switchMap(id => {
         const productUrl = this.productsUrl + '/' + id;
@@ -40,7 +40,7 @@ export class ProductService {
       })
     );
 
-  product$ = combineLatest([
+  readonly product$ = combineLatest([
     this.productSelected$,
     this.products$
   ]).pipe(
