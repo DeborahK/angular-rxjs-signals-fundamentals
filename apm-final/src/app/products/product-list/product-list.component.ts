@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
 import { ProductService } from '../product.service';
-import { EMPTY, catchError } from 'rxjs';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
@@ -13,20 +12,23 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
 })
 export class ProductListComponent {
   pageTitle = 'Products';
-  errorMessage = '';
 
   private productService = inject(ProductService);
 
   // Selected product id to highlight the entry
-  selectedProductId$ = this.productService.productSelected$;
+  //selectedProductId$ = this.productService.productSelected$; // Using a Subject
 
-  products$ = this.productService.products$
-  .pipe(
-    catchError(err => {
-      this.errorMessage = err;
-      return EMPTY;
-    })
-  );
+  selectedProductId = this.productService.selectedProductId;  // Using a signal
+  products = this.productService.products;
+  errorMessage = this.productService.productsErrorMessage;
+
+  // products$ = this.productService.products$
+  // .pipe(
+  //   catchError(err => {
+  //     this.errorMessage = err;
+  //     return EMPTY;
+  //   })
+  // );
 
   onSelected(productId: number): void {
     this.productService.productSelected(productId);
