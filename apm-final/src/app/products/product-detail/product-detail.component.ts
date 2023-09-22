@@ -20,14 +20,6 @@ export class ProductDetailComponent {
   product = this.productService.product;
   errorMessage = this.productService.productErrorMessage;
 
-  // product$ = this.productService.product$
-  //   .pipe(
-  //     catchError(err => {
-  //       this.errorMessage = err;
-  //       return EMPTY;
-  //     })
-  //   );
-
   // Set the page title
   pageTitle = computed(() =>
     this.product()

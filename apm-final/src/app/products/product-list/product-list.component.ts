@@ -16,19 +16,10 @@ export class ProductListComponent {
   private productService = inject(ProductService);
 
   // Selected product id to highlight the entry
-  //selectedProductId$ = this.productService.productSelected$; // Using a Subject
+  selectedProductId = this.productService.selectedProductId;
 
-  selectedProductId = this.productService.selectedProductId;  // Using a signal
   products = this.productService.products;
   errorMessage = this.productService.productsErrorMessage;
-
-  // products$ = this.productService.products$
-  // .pipe(
-  //   catchError(err => {
-  //     this.errorMessage = err;
-  //     return EMPTY;
-  //   })
-  // );
 
   onSelected(productId: number): void {
     this.productService.productSelected(productId);

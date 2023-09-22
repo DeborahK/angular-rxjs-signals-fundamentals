@@ -16,9 +16,6 @@ export class ProductService {
   private http = inject(HttpClient);
   private reviewService = inject(ReviewService);
 
-  // private productSelectedSubject = new BehaviorSubject<number | undefined>(undefined);
-  // readonly productSelected$ = this.productSelectedSubject.asObservable();
-
   selectedProductId = signal<number | undefined>(undefined);
 
   // Get all products
@@ -32,7 +29,6 @@ export class ProductService {
         error: this.errorService.formatError(err)
       } as Result<Product[]>))
     );
-
   private productsResult = toSignal(this.productsResult$, { initialValue: { data: [] } as Result<Product[]> });
   products = computed(() => this.productsResult().data);
   productsErrorMessage = computed(() => this.productsResult().error);
@@ -46,7 +42,8 @@ export class ProductService {
   //   }
   // });
 
-  // Get one product
+  // Get the selected product
+  // Option 1: Reget the product and then get the reviews.
   private productResult1$ = toObservable(this.selectedProductId)
     .pipe(
       filter(Boolean),
@@ -65,21 +62,9 @@ export class ProductService {
       map(p => ({ data: p } as Result<Product>))
     );
 
-  private productResult1 = toSignal(this.productResult1$);
-  product1 = computed(() => this.productResult1()?.data);
-  productErrorMessage1 = computed(() => this.productResult1()?.error);
-
-  // readonly product2$ = combineLatest([
-  //   this.productSelected$,
-  //   this.products$
-  // ]).pipe(
-  //   map(([selectedProductId, products]) =>
-  //     products.find(product => product.id === selectedProductId)
-  //   ),
-  //   filter(Boolean),
-  //   switchMap(product => this.getReviews(product)),
-  //   catchError(err => this.handleError(err))
-  // )
+  // Get the selected product
+  // Option 2: Find the product in the retrieved array of products
+  //           and then get the reviews.
 
   // Finding the product in the existing array of products
   private foundProduct = computed(() => {
@@ -103,12 +88,13 @@ export class ProductService {
         error: this.errorService.formatError(err)
       } as Result<Product>))
     );
+
+  // Change to this.productResult1$ to use the "option 1" observable.
   private productResult = toSignal(this.productResult$);
   product = computed(() => this.productResult()?.data);
   productErrorMessage = computed(() => this.productResult()?.error);
 
   productSelected(selectedProductId: number): void {
-    //this.productSelectedSubject.next(selectedProductId);
     this.selectedProductId.set(selectedProductId);
   }
 
