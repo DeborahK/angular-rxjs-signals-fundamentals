@@ -1,9 +1,8 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { CartItem } from '../cart';
-import { CartService } from '../cart.service';
 
 @Component({
   selector: 'sw-cart-item',
@@ -12,7 +11,6 @@ import { CartService } from '../cart.service';
   templateUrl: './cart-item.component.html'
 })
 export class CartItemComponent {
-  cartService = inject(CartService);
 
   @Input({ required: true }) cartItem!: CartItem;
 
