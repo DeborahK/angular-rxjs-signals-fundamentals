@@ -12,7 +12,7 @@
               aria-label="Quantity list"
               style="margin-bottom: 10px; width:60px; margin: 0 auto"
               [ngModel]="cartItem.quantity"
-              (change)="onQuantitySelected($any($event.target).value)">
+              (ngModelChange)="onQuantitySelected($event)">
         <option disabled
                 value="">--Select a quantity--</option>
         <option *ngFor="let q of qtyArr">{{ q }}</option>

@@ -18,7 +18,7 @@ export class ProductDetailComponent {
 
   // Product to display
   product = this.productService.product;
-  errorMessage = this.productService.productErrorMessage;
+  errorMessage = this.productService.productError;
 
   // Set the page title
   pageTitle = computed(() =>
@@ -28,9 +28,7 @@ export class ProductDetailComponent {
 
   // This does not currently prevent the user from
   // ordering more quantity than available in inventory
-  addToCart(product: Product | undefined) {
-    if (product) {
-      this.cartService.addToCart(product);
-    }
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
   }
 }

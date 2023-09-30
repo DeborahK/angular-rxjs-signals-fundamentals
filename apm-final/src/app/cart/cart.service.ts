@@ -6,12 +6,13 @@ import { Product } from "../products/product";
   providedIn: 'root'
 })
 export class CartService {
+  // Manage state with signals
   cartItems = signal<CartItem[]>([]);
 
-  effLength = effect(() => console.log("Cart Array Length:", this.cartItems().length));
-
-  cartCount = computed(() => this.cartItems().reduce(
-    (accQty, item) => accQty + item.quantity, 0));
+  // Number of items in the cart
+  cartCount = computed(() => this.cartItems()
+    .reduce((accQty, item) => accQty + item.quantity, 0)
+  );
 
   // Total up the extended price for each item
   subTotal = computed(() => this.cartItems().reduce((accTotal, item) =>
@@ -26,10 +27,11 @@ export class CartService {
   // Total price
   totalPrice = computed(() => this.subTotal() + this.deliveryFee() + this.tax());
 
+  eLength = effect(() => console.log('Cart array length', this.cartItems().length));
+
   // Add the vehicle to the cart
   // If the item is already in the cart, increase the quantity
   addToCart(product: Product): void {
-    //this.cartItems().push({product, quantity: 1})
     const index = this.cartItems().findIndex(item =>
       item.product.id === product.id);
     if (index === -1) {
@@ -50,8 +52,8 @@ export class CartService {
   removeFromCart(cartItem: CartItem): void {
     // Update the cart with a new array containing
     // all but the filtered out deleted item
-    this.cartItems.update(items => items.filter(item =>
-      item.product.id !== cartItem.product.id));
+    this.cartItems.update(items => items
+      .filter(item => item.product.id !== cartItem.product.id));
   }
 
   // Update the cart quantity

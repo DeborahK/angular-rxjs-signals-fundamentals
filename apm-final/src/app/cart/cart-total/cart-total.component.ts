@@ -9,8 +9,10 @@ import { CartService } from '../cart.service';
   imports: [NgIf, CurrencyPipe]
 })
 export class CartTotalComponent {
+
   private cartService = inject(CartService);
 
+  // Reference the service signals for binding
   cartItems = this.cartService.cartItems;
   subTotal = this.cartService.subTotal;
   deliveryFee = this.cartService.deliveryFee;

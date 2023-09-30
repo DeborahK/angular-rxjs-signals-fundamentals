@@ -19,7 +19,7 @@ export class CartItemComponent {
   qtyArr = [...Array(8).keys()].map(x => x + 1);
 
   // Calculate the extended price
-  exPrice = this.cartItem.quantity * this.cartItem.product.price;
+  exPrice = this.cartItem?.quantity * this.cartItem?.product.price;
 
   onQuantitySelected(quantity: number): void {
 

@@ -12,32 +12,33 @@ import { CartService } from '../cart.service';
   templateUrl: './cart-item.component.html'
 })
 export class CartItemComponent {
-  private cartService = inject(CartService);
 
   // Use a setter to set the signal 
   // when the item is passed in from the parent component
-  @Input({ required: true, alias: 'cartItem' }) set item(item: CartItem) {
-    this.cartItem.set(item);
-  }
+  @Input({ required: true }) set cartItem(ci: CartItem) {
+    this.item.set(ci);
+  };
 
-  cartItem = signal<CartItem>(undefined!);
+  private cartService = inject(CartService);
+
+  item = signal<CartItem>(undefined!);
 
   // Quantity available (hard-coded to 8)
   // Mapped to an array from 1-8
-  //qtyArr = [...Array(8).keys()].map(x => x + 1);
+  // qtyArr = [...Array(8).keys()].map(x => x + 1);
 
   // Build an array of numbers from 1 to qty available
   qtyArr = computed<Number[]>(() =>
-    [...Array(this.cartItem().product.quantityInStock).keys()].map(x => x + 1));
+    [...Array(this.item().product.quantityInStock).keys()].map(x => x + 1));
 
   // Calculate the extended price
-  exPrice = computed(() => this.cartItem().quantity * this.cartItem().product.price);
+  exPrice = computed(() => this.item().quantity * this.item().product.price);
 
   onQuantitySelected(quantity: number): void {
-    this.cartService.updateQuantity(this.cartItem(), Number(quantity));
+    this.cartService.updateQuantity(this.item(), Number(quantity));
   }
 
   removeFromCart(): void {
-    this.cartService.removeFromCart(this.cartItem());
+    this.cartService.removeFromCart(this.item());
   }
 }

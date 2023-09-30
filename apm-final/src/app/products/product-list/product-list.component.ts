@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 
 import { NgIf, NgFor, NgClass, AsyncPipe } from '@angular/common';
-import { ProductService } from '../product.service';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'pm-product-list',
@@ -19,7 +19,7 @@ export class ProductListComponent {
   selectedProductId = this.productService.selectedProductId;
 
   products = this.productService.products;
-  errorMessage = this.productService.productsErrorMessage;
+  errorMessage = this.productService.productsError;
 
   onSelected(productId: number): void {
     this.productService.productSelected(productId);
