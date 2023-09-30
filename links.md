@@ -1,4 +1,14 @@
-##RxJS Terms and Syntax
+## Reactive Programming
+
+[RxJS Documentation](https://rxjs.dev/)
+
+[Angular Signals Documentation](https://angular.io/guide/signals)
+
+[Rx.NET](https://github.com/dotnet/reactive)
+
+[Proposal for ECMAScript Observable](https://tc39.es/proposal-observable/)
+
+## RxJS Terms and Syntax
 
 [RxJS Documentation](https://rxjs.dev/)
 
@@ -6,7 +16,7 @@
 
 [Demo Code](https://stackblitz.com/edit/rxjs-signals-m3-deborahk)
 
-##RxJS Operators
+## RxJS Operators
 
 [RxJS Documentation](https://rxjs.dev/)
 
