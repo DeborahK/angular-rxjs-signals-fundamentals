@@ -71,6 +71,15 @@
 ["Declarative Pattern for Getting Data from an Observable" - YouTube video](https://youtu.be/0XPxUa8u-LY)
 
 ## Reacting to Actions: Subject and BehaviorSubject
+[Sample Project Code (GitHub)](https://github.com/DeborahK/angular-rxjs-signals-fundamentals)
+
+["Subject" - RxJS Documentation](https://rxjs.dev/api/index/class/Subject)
+
+["BehaviorSubject" - RxJS Documentation](https://rxjs.dev/api/index/class/BehaviorSubject)
+
+["combineLatest" - RxJS Documentation](https://rxjs.dev/api/index/function/combineLatest)
+
+["4 Wicked Pipelines for RxJS in Angular" - YouTube video](https://youtu.be/wQ8jXlWMoCo)
 
 ## Introduction to Angular Signals
 
