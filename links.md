@@ -62,6 +62,13 @@
 ["RxJS in Angular: Terms, Tips, and Patterns" - YouTube video (This time code links to using an array of ids to retrieve data)](https://youtu.be/vtCDRiG__D4?t=2190)
 
 ## Using a Declarative Approach
+[Sample Project Code (GitHub)](https://github.com/DeborahK/angular-rxjs-signals-fundamentals)
+
+["Observables in Angular: Async pipe" - Angular documentation](https://angular.io/guide/observables-in-angular#async-pipe)
+
+["shareReplay" - RxJS documentation](https://rxjs.dev/api/index/function/shareReplay)
+
+["Declarative Pattern for Getting Data from an Observable" - YouTube video](https://youtu.be/0XPxUa8u-LY)
 
 ## Reacting to Actions: Subject and BehaviorSubject
 
