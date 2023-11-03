@@ -49,6 +49,17 @@
 ["Error Handling with Observables" - YouTube video](https://youtu.be/L9kFTps_7Tk)
 
 ## Getting Related Data: switchMap, concatMap and mergeMap
+[Sample Project Code (StackBlitz)](https://stackblitz.com/edit/rxjs-signals-m7-deborahk)
+
+[Sample Project Code (GitHub)](https://github.com/DeborahK/angular-rxjs-signals-fundamentals)
+
+["Higher-order Observables" - RxJS documentation](https://rxjs.dev/guide/higher-order-observables)
+
+["Why You Shouldn’t Nest Subscribes" - Medium article](https://medium.com/ngconf/why-you-shouldnt-nest-subscribes-eafbc3b00af2)
+
+["switchMap vs concatMap vs mergeMap … Oh My!" - YouTube video](https://youtu.be/RSf7DlJXoGQ)
+
+["RxJS in Angular: Terms, Tips, and Patterns" - YouTube video (This time code links to using an array of ids to retrieve data)](https://youtu.be/vtCDRiG__D4?t=2190)
 
 ## Using a Declarative Approach
 
