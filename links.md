@@ -47,3 +47,15 @@
 ["HTTP client - Handle request errors" - Angular documentation](https://angular.io/guide/http-handle-request-errors)
 
 ["Error Handling with Observables" - YouTube video](https://youtu.be/L9kFTps_7Tk)
+
+## Getting Related Data: switchMap, concatMap and mergeMap
+
+## Using a Declarative Approach
+
+## Reacting to Actions: Subject and BehaviorSubject
+
+## Introduction to Angular Signals
+
+## Using Signals to Build a Shopping Cart Feature
+
+## RxJS and Angular Signals: Better Together
