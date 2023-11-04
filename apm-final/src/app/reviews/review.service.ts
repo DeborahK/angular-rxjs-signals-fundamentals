@@ -4,8 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ReviewService {
-  // Just enough here for the code to compile
-  reviewsUrl = 'api/reviews';
+  private reviewsUrl = 'api/reviews';
 
   getReviewUrl(productId: number): string {
     // Use appropriate regular expression syntax to

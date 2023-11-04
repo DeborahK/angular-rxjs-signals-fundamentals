@@ -17,7 +17,7 @@ export class CartItemComponent {
   // when the item is passed in from the parent component
   @Input({ required: true }) set cartItem(ci: CartItem) {
     this.item.set(ci);
-  };
+  }
 
   private cartService = inject(CartService);
 

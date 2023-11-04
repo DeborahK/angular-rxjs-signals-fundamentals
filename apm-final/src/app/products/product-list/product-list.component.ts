@@ -15,11 +15,12 @@ export class ProductListComponent {
 
   private productService = inject(ProductService);
 
-  // Selected product id to highlight the entry
-  selectedProductId = this.productService.selectedProductId;
-
+  // Products
   products = this.productService.products;
   errorMessage = this.productService.productsError;
+
+  // Selected product id to highlight the entry
+  selectedProductId = this.productService.selectedProductId;
 
   onSelected(productId: number): void {
     this.productService.productSelected(productId);

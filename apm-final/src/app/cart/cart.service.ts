@@ -27,7 +27,7 @@ export class CartService {
   // Total price
   totalPrice = computed(() => this.subTotal() + this.deliveryFee() + this.tax());
 
-  eLength = effect(() => console.log('Cart array length', this.cartItems().length));
+  eLength = effect(() => console.log('Cart array length:', this.cartItems().length));
 
   // Add the vehicle to the cart
   // If the item is already in the cart, increase the quantity

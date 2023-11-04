@@ -30,7 +30,8 @@ export class ProductService {
         error: this.errorService.formatError(err)
       } as Result<Product[]>))
     );
-  private productsResult = toSignal(this.productsResult$, { initialValue: { data: [] } as Result<Product[]> });
+  private productsResult = toSignal(this.productsResult$,
+    { initialValue: ({ data: [] } as Result<Product[]>) });
   products = computed(() => this.productsResult().data);
   productsError = computed(() => this.productsResult().error);
 
@@ -43,8 +44,9 @@ export class ProductService {
   //   }
   // });
 
-  // Get the selected product
+  // Get the selected product and the related set of reviews
   // Option 1: Reget the product and then get the reviews.
+  // Change this to productResult$ to use "Option 1"
   private productResult1$ = toObservable(this.selectedProductId)
     .pipe(
       filter(Boolean),
@@ -57,7 +59,7 @@ export class ProductService {
               data: undefined,
               error: this.errorService.formatError(err)
             } as Result<Product>))
-          )
+          );
       }),
       map(p => ({ data: p } as Result<Product>))
     );
@@ -77,6 +79,7 @@ export class ProductService {
   })
 
   // Get the related set of reviews
+  // Change this to productResult2$ to use "Option 1"
   private productResult$ = toObservable(this.foundProduct)
     .pipe(
       filter(Boolean),
@@ -87,8 +90,6 @@ export class ProductService {
         error: this.errorService.formatError(err)
       } as Result<Product>))
     );
-
-  // Change to this.productResult1$ to use the "option 1" observable.
   private productResult = toSignal(this.productResult$);
   product = computed(() => this.productResult()?.data);
   productError = computed(() => this.productResult()?.error);
