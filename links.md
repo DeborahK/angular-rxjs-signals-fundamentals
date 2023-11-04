@@ -49,7 +49,7 @@
 ["Error Handling with Observables" - YouTube video](https://youtu.be/L9kFTps_7Tk)
 
 ## Getting Related Data: switchMap, concatMap and mergeMap
-[Sample Project Code (StackBlitz)](https://stackblitz.com/edit/rxjs-signals-m7-deborahk)
+[Demo code (StackBlitz)](https://stackblitz.com/edit/rxjs-signals-m7-deborahk)
 
 [Sample Project Code (GitHub)](https://github.com/DeborahK/angular-rxjs-signals-fundamentals)
 
@@ -82,12 +82,20 @@
 ["4 Wicked Pipelines for RxJS in Angular" - YouTube video](https://youtu.be/wQ8jXlWMoCo)
 
 ## Introduction to Angular Signals
-[Sample Project Code (StackBlitz)](https://stackblitz.com/edit/rxjs-signals-m10-deborahk)
+[Demo code (StackBlitz)](https://stackblitz.com/edit/rxjs-signals-m10-deborahk)
 
 ["Signals in Angular – How to Write More Reactive Code" - freeCodeCamp article](https://www.freecodecamp.org/news/angular-signals)
 
 ["Angular Signals: What? Why? and How?" - YouTube video](https://youtu.be/oqYQG7QMdzw)
 
 ## Using Signals to Build a Shopping Cart Feature
+[Sample Project Code (GitHub)](https://github.com/DeborahK/angular-rxjs-signals-fundamentals)
+
+["Manage State with Angular Signals" - YouTube video](https://youtu.be/04avEeicarQ)
 
 ## RxJS and Angular Signals: Better Together
+[Sample Project Code (GitHub)](https://github.com/DeborahK/angular-rxjs-signals-fundamentals)
+
+[Code from the Slides (StackBlitz)](https://stackblitz.com/edit/rxjs-signals-m12-deborahk)
+
+["Unlocking the Power of Angular Signals + RxJS" - YouTube video](https://youtu.be/nXJFhZdbWzw)
