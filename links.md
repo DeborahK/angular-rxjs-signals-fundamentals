@@ -82,6 +82,11 @@
 ["4 Wicked Pipelines for RxJS in Angular" - YouTube video](https://youtu.be/wQ8jXlWMoCo)
 
 ## Introduction to Angular Signals
+[Sample Project Code (StackBlitz)](https://stackblitz.com/edit/rxjs-signals-m10-deborahk)
+
+["Signals in Angular – How to Write More Reactive Code" - freeCodeCamp article](https://www.freecodecamp.org/news/angular-signals)
+
+["Angular Signals: What? Why? and How?" - YouTube video](https://youtu.be/oqYQG7QMdzw)
 
 ## Using Signals to Build a Shopping Cart Feature
 
