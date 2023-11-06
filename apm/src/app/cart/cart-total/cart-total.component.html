@@ -1,0 +1,32 @@
+<div class="card border-secondary"
+     *ngIf='cartItems.length'>
+
+  <div class='card-header text-secondary fw-bold'>
+    Cart Total
+  </div>
+
+  <div class='card-body'>
+    <div class="row">
+      <div class="col-md-5">Subtotal:</div>
+      <div class="col-md-4 text-end">{{subTotal | currency}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">Delivery:</div>
+      <div class="col-md-4 text-end"
+           *ngIf='deliveryFee'>{{deliveryFee | currency}}</div>
+      <div class="col-md-4"
+           style='text-align:right;color:red'
+           *ngIf='!(deliveryFee)'>Free</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Estimated Tax:</div>
+      <div class="col-md-4 text-end">{{tax | currency}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5"><b>Total:</b></div>
+      <div class="col-md-4 text-end"><b>{{totalPrice | currency}}</b></div>
+    </div>
+  </div>
+</div>

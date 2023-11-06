@@ -1,0 +1,68 @@
+<div class="card"
+     *ngIf="product">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col-md-2">Name:</div>
+      <div class="col-md-6">{{product.productName}}</div>
+      <div class="col-md-3"><button class='btn btn-primary'
+                (click)="addToCart(product)">Add to Cart</button></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">Code:</div>
+      <div class="col-md-6">{{product.productCode}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">Description:</div>
+      <div class="col-md-6">{{product.description}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">Price:</div>
+      <div class="col-md-6">{{product.price|currency:"USD":"symbol"}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">In Stock:</div>
+      <div class="col-md-6">{{product.quantityInStock ?? 0}}</div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table mb-0"
+             *ngIf="product.reviews; else noReviews">
+        <thead>
+          <tr>
+            <th>Review</th>
+            <th>Username</th>
+            <th>Text</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let review of product.reviews">
+            <td>{{ review.title }} </td>
+            <td>{{ review.userName }}</td>
+            <td>{{ review.text }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ng-template #noReviews> No reviews for this product</ng-template>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="card"
+     *ngIf="errorMessage">
+  <div class="card-header">
+    Product Detail
+  </div>
+</div>
+  <div class="alert alert-danger"
+     *ngIf="errorMessage">
+    {{errorMessage}}
+
+</div>
