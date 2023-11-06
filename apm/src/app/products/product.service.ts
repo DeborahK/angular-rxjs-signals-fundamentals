@@ -19,6 +19,7 @@ export class ProductService {
 
   selectedProductId = signal<number | undefined>(undefined);
 
+  // Get all products
   private productsResult$ = this.http.get<Product[]>(this.productsUrl)
     .pipe(
       map(p => ({ data: p } as Result<Product[]>)),
@@ -34,6 +35,7 @@ export class ProductService {
   products = computed(() => this.productsResult().data);
   productsError = computed(() => this.productsResult().error);
 
+  // Could catch any toSignal error when calling toSignal
   // products = computed(() => {
   //   try {
   //     return toSignal(this.products$, { initialValue: [] as Product[] })();
@@ -42,6 +44,9 @@ export class ProductService {
   //   }
   // });
 
+  // Get the selected product and the related set of reviews
+  // Option 1: Reget the product and then get the reviews.
+  // Change this to productResult$ to use "Option 1"
   private productResult1$ = toObservable(this.selectedProductId)
     .pipe(
       filter(Boolean),
@@ -58,7 +63,10 @@ export class ProductService {
       }),
       map(p => ({ data: p } as Result<Product>))
     );
-  
+
+  // Get the selected product
+  // Option 2: Find the product in the retrieved array of products
+  //           and then get the reviews.
   // Find the product in the existing array of products
   private foundProduct = computed(() => {
     // Dependent signals
@@ -71,6 +79,7 @@ export class ProductService {
   })
 
   // Get the related set of reviews
+  // Change this to productResult2$ to use "Option 1"
   private productResult$ = toObservable(this.foundProduct)
     .pipe(
       filter(Boolean),
