@@ -15,7 +15,7 @@
       <a class="nav-link"
          [routerLink]="['/cart']"
          routerLinkActive="active">Cart
-         <span class="badge bg-primary">{{cartCount > 0 ? cartCount : ''}}</span>
+         <span class="badge bg-primary">{{cartCount() > 0 ? cartCount() : ''}}</span>
         </a>
     </li>
   </ul>
