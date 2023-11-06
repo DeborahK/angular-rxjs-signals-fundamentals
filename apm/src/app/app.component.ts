@@ -1,6 +1,7 @@
 //import 'zone.js/dist/zone';  // Required for Stackblitz
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
+import { CartService } from './cart/cart.service';
 
 @Component({
   selector: 'pm-root',
@@ -10,9 +11,10 @@ import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // Just enough here for the template to compile
   pageTitle = 'Acme Product Management';
 
-  cartCount = 0;
+  private cartService = inject(CartService);
+
+  cartCount = this.cartService.cartCount;
 
 }

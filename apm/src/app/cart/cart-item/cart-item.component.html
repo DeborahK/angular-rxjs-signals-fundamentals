@@ -1,4 +1,4 @@
-<div *ngIf='cartItem'>
+<div *ngIf='item() as cartItem'>
 
   <div class="row mb-2">
     <div class="col-md-4">
@@ -15,11 +15,11 @@
               (ngModelChange)="onQuantitySelected($event)">
         <option disabled
                 value="">--Select a quantity--</option>
-        <option *ngFor="let q of qtyArr">{{ q }}</option>
+        <option *ngFor="let q of qtyArr()">{{ q }}</option>
       </select>
     </div>
     <div class="col-md-2 text-center">
-      {{ exPrice | currency }}
+      {{ exPrice() | currency }}
     </div>
     <div class="col-md-2">
       <button class="btn btn-warning"
