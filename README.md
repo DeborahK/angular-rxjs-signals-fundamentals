@@ -1,5 +1,5 @@
 # angular-rxjs-signals-fundamentals
-Sample code for the "RxJS and Angular Signal Fundamentals" course at Pluralsight
+Sample code for the ["RxJS and Angular Signal Fundamentals" course at Pluralsight](https://www.pluralsight.com/library/courses/rxjs-angular-signals-fundamentals)
 
 Using RxJS and signals with reactive programming techniques, our applications are more responsive to user actions and state changes, providing a better user experience with less code.
 
